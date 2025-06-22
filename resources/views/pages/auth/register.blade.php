@@ -41,11 +41,16 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Register please</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Registrasi</h1>
                                     </div>
-                                    <form class="user" action="{{ route('auth.login') }}" method="POST">
+                                    <form class="user" action="{{ route('auth.register') }}" method="POST">
                                         @csrf
                                         @method('post')
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control form-control-user"
+                                                id="inputName"
+                                                placeholder="Nama Lengkap...">
+                                        </div>
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user"
                                                 id="inputEmail" aria-describedby="emailHelp"
@@ -56,13 +61,13 @@
                                                 id="inputPassword" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
+                                            Buat akun
                                         </button>
                                         <hr>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="/">Sudah punya akun!</a>
                                     </div>
                                 </div>
                             </div>
