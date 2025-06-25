@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function dashboard()
+    {
+        return view('pages.content');
+    }
+    // LOGIN FUNCTION AUTHENTICATION
     public function login()
     {
         if(Auth::check()){
@@ -25,20 +30,27 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
-        ]);
+        ],
+        [
+            'email.required' => 'Email is required',
+            'password.required' => 'Password is required',
+        ]
+    );
         // $userStatus = Auth::user()->status;
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->status == 'submitted') {
+                $this->_logout($request);
                 return back()->withErrors([
                     'email' => 'Your account is waiting for approval'
                 ]);
             }else if (Auth::user()->status == 'rejected') {
+                $this->_logout($request);
                 return back()->withErrors([
                     'email'  => 'Your account rejected'
                 ]);
             }
-            return redirect()->intended('dashboard');
+            return redirect()->intended('dashboard')->with('success', 'Login Success');
         }
         
         return back()->withErrors([
@@ -46,13 +58,21 @@ class AuthController extends Controller
             ])->onlyInput('email');
         }
         
-        public function logout(Request $request): RedirectResponse
+        // LOG OUT FUNCTION AUTHENTICATION
+        public function _logout(Request $request)
         {
             Auth::logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
+        }
+        public function logout(Request $request)
+        {
+            
+            $this->_logout($request);
             return redirect('/');
         }
+
+        // REGISTER FUNCTION AUTHENTICATION
         public function registerView()
         {
             return view('pages.auth.register');

@@ -3,9 +3,7 @@
 @section('konten')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Data Penduduk</h1>
-        <a href="{{ route('resident.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
+        <h1 class="h3 mb-0 text-gray-800">Kelola Akun</h1>
     </div>
     
 
@@ -46,40 +44,48 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>NIK</th>
                                 <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Tempat Tanggal Lahir</th>
-                                <th>Alamat</th>
-                                <th>Agama</th>
-                                <th>Status Perkawinan</th>
-                                <th>Pekerjaan</th>
-                                <th>Telepon</th>
-                                <th>Status Penduduk</th>
+                                <th>Email</th>
+                                <th>Role Id</th>
+                                <th>Status</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($residents as $item)
+                            @foreach ($userList as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nik }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->gender }}</td>
-                                    <td>{{ $item->birth_place }}, {{ $item->birth_date }}</td>
-                                    <td>{{ $item->address }}</td>
-                                    <td>{{ $item->religion }}</td>
-                                    <td>{{ $item->marital_status }}</td>
-                                    <td>{{ $item->occupation }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->status }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->role_id }}</td>
+                                    <td>
+                                        @if ($item->status == 'approved')
+                                            <span class="badge badge-success">Aktif</span>
+                                            @else
+                                            <span class="badge badge-danger">Tidak Aktif</span>
+                                            
+                                        @endif
+                                    </td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->updated_at }}</td>
                                     <td class="action-buttons">
-                                        <button class="btn btn-sm btn-warning">
-                                            <a href="{{ route('resident.edit', ['id'=>$item->id]) }}">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        </button>
-                                        <form action="{{ route('resident.delete', ['id'=>$item->id]) }}" method="post" class="d-inline">
+                                        <form action="{{ route('userManage.approve', ['id'=>$item->id]) }}" method="post" class="d-inline">
+                                            @csrf
+                                            @method('post')
+                                            <button class="btn btn-sm btn-success">
+                                                <i class="fa-solid fa-thumbs-up"></i>
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('userManage.reject', ['id'=>$item->id]) }}" method="post" class="d-inline">
+                                            @csrf
+                                            @method('post')
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('userManage.delete', ['id'=>$item->id]) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-sm btn-danger">

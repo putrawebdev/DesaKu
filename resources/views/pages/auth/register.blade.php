@@ -67,7 +67,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="/">Sudah punya akun!</a>
+                                        <a class="small" href="{{ route('view_login') }}">Sudah punya akun!</a>
                                     </div>
                                 </div>
                             </div>

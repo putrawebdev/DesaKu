@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('sbadmin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -35,18 +36,26 @@
                 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                         @if (session('success'))
-                            <div class="alert alert-success alert-dismissable fade-show" role="alert">
-                                {{ session('success') }}
-                            </div>
+                            <script>
+                                Swal.fire({
+                                    title: "Success",
+                                    text: "{{ session('success') }}",
+                                    icon: "success"
+                                });
+                            </script>
                         @endif
                         @if ($errors->any())
-                            <div class="alert alert-danger alert-dismissable" role="alert">
-                                @foreach ($errors->all() as $error)
-                                    <ul>
-                                        <li>{{ $error }}</li>
-                                    </ul>
-                                @endforeach
-                            </div>
+                            
+                            @foreach ($errors->all() as $error)
+                                <script>
+                                    Swal.fire({
+                                        title: "Something wrong!",
+                                        text: "{{ $error }}{{ $loop->last? '.' : ', ' }}",
+                                        icon: "error"
+                                    });
+                                </script>
+                            @endforeach
+                            
                         @endif
                         <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
@@ -98,6 +107,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('sbadmin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('sbadmin/js/sb-admin-2.min.js') }}"></script>

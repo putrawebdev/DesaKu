@@ -5,6 +5,7 @@
         <h1 class="h3 mb-0 text-gray-800">{{ isset($residentFind)? 'Edit Data Penduduk':'Tambah Data Penduduk' }}</h1>
     </div>
 
+
     <div class="row">
         <div class="col">
             <form action="{{ isset($residentFind)? route('resident.update', ['id'=>$residentFind->id]):route('resident.store') }}" method="post">
