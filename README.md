@@ -9,11 +9,11 @@
 
 ### Dashboard (User & Admin)
 
-###Pengelolaan Data Penduduk (Admin Only)
+### Pengelolaan Data Penduduk (Admin Only)
 - Daftar Data Penduduk : Menampilkan seluruh data penduduk desa
 - Tambah Data Penduduk : Menambahkan data penduduk baru
 - Edit Data Penduduk : Mengubah informasi data penduduk yang sudah ada
 
-Manajemen Pengguna (Admin Only)
+### Manajemen Pengguna (Admin Only)
 - Kelola User : Mengelola daftar pengguna sistem
 - Approve/Reject User : Menyetujui atau menolak pendaftaran pengguna baru
