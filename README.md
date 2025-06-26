@@ -19,7 +19,7 @@
 - Approve/Reject User : Menyetujui atau menolak pendaftaran pengguna baru
 
 <h3>📄 License</h3>
-Project ini menggunakan [MIT license](https://opensource.org/licenses/MIT).
+Project ini menggunakan ![MIT license](https://opensource.org/licenses/MIT).
 
 <h3>👨‍💻 Developer</h3>
 <ul>
