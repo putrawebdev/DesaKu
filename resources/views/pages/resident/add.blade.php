@@ -85,7 +85,7 @@
                             <a href="{{ route('resident.index') }}" class="btn btn-outline-secondary">
                                 Kembali
                             </a>
-                            <button type="submit" class="btn btn-primary">{{ isset($residentFind)? 'Edit':'Simpan' }}</button>
+                            <button type="submit" class="btn btn-outline-dark">{{ isset($residentFind)? 'Edit':'Simpan' }}</button>
                         </div>
                     </div>
                 </div>

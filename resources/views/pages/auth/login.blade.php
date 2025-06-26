@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-light">
     {{-- @if ($errors->any())
         @dd($errors->all())
     @endif --}}
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-lg-6">
                                 
-                                <div class="p-5">
+                                <div class="bg-gradient-light shadow-lg p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
@@ -80,7 +80,7 @@
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="inputPassword" placeholder="Password">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-dark btn-user btn-block">
                                             Login
                                         </button>
                                         <hr>

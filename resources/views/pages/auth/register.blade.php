@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-light">
     {{-- @if ($errors->any())
         @dd($errors->all())
     @endif --}}
@@ -33,7 +33,7 @@
             
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 bg-gradient-light shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -60,7 +60,7 @@
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="inputPassword" placeholder="Password">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-dark btn-user btn-block">
                                             Buat akun
                                         </button>
                                         <hr>
