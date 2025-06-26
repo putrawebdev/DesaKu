@@ -1,6 +1,19 @@
-# Website pengelola data penduduk desa
-### NEXT FEATURE COMING SOON BRO
-Fitur Baru di tambahkan pada 22/06/2025
-- Login dan Register
-- Role Admin dan User
-- Middleware authentication
+# DesaKu - Website Pengelola Desa
+
+## 🚀 Fitur Utama
+
+### Autentikasi & Otorisasi
+- Login : Masuk ke sistem dengan kredensial yang valid
+- Register : Pendaftaran pengguna baru (menunggu persetujuan admin)
+- Logout : Keluar dari sistem dengan aman
+
+### Dashboard (User & Admin)
+
+###Pengelolaan Data Penduduk (Admin Only)
+- Daftar Data Penduduk : Menampilkan seluruh data penduduk desa
+- Tambah Data Penduduk : Menambahkan data penduduk baru
+- Edit Data Penduduk : Mengubah informasi data penduduk yang sudah ada
+
+Manajemen Pengguna (Admin Only)
+- Kelola User : Mengelola daftar pengguna sistem
+- Approve/Reject User : Menyetujui atau menolak pendaftaran pengguna baru
