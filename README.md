@@ -1,4 +1,14 @@
 # DesaKu - Website Pengelola Desa
+#### DesaKu - Memudahkan Pengelolaan Administrasi Desa 🏘️
+
+## 🛠️ Teknologi yang Digunakan
+- Framework: Laravel 12
+- Database: MySQL
+- Authentication: Laravel Built-in Authentication dengan Middleware
+- Frontend: Blade Templates
+- CSS Framework: Bootstrap
+- Server: Apache
+- PHP Version: 8.2+
 
 ## 🚀 Fitur Utama
 
