@@ -63,9 +63,8 @@
                                     <td>
                                         @if ($item->status == 'approved')
                                             <span class="badge badge-success">Aktif</span>
-                                            @else
+                                        @else
                                             <span class="badge badge-danger">Tidak Aktif</span>
-                                            
                                         @endif
                                     </td>
                                     <td>{{ $item->created_at }}</td>

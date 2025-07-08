@@ -1,17 +1,17 @@
 @php
     $menus = [
         1 => [
-            (object) [
-                'title' => 'Dashboard',
-                'path' => '/dashboard',
-                'pathinfo' => 'dashboard',
-                'icon' => 'fas fa-fw fa-tachometer-alt'
-            ],
-            (object) [
-                'title' => 'Penduduk',
-                'path' => route('resident.index'),
-                'pathinfo' => 'resident',
-                'icon' => 'fas fa-fw fa-table'
+                (object) [
+                    'title' => 'Dashboard',
+                    'path' => '/dashboard',
+                    'pathinfo' => 'dashboard',
+                    'icon' => 'fas fa-fw fa-tachometer-alt'
+                ],
+                (object) [
+                    'title' => 'Penduduk',
+                    'path' => route('resident.index'),
+                    'pathinfo' => 'resident',
+                    'icon' => 'fas fa-fw fa-table'
                 ],
                 (object) [
                     'title' => 'Permintaan User',
